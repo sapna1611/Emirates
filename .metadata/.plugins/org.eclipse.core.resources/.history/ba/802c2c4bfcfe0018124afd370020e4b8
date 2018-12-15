@@ -1,0 +1,30 @@
+package com.emirates.ek.pages;
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+public class HomePage {
+
+	public static final String SEARCH_FLIGHTS_TAB = "description";
+	@FindBy(id = SEARCH_FLIGHTS_TAB)
+	private WebElement searchFlightsTab;
+
+	public static final String DEPARTURE_AIRPORT = "description";
+	@FindBy(xpath = DEPARTURE_AIRPORT)
+	private WebElement departureAirport;
+
+	public static final String ARRIVAL_AIRPORT = "description";
+	@FindBy(xpath = ARRIVAL_AIRPORT)
+	private WebElement arrivalAirport;
+	
+	
+	public void clickonSearchFlightsTab(){
+		LOGGER.info("[CDP-TEST] About - Clicking on Copyright Tab");
+		waitForWebElementToBeClickable(searchFlightsTab);
+		searchFlightsTab.click();
+		
+
+		}
+	}
+
+}

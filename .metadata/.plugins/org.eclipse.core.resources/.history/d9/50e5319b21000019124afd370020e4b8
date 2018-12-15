@@ -1,0 +1,23 @@
+package com.emirates.ek.utils;
+
+import java.util.Properties;
+
+public class ProjectProteriesUtils {
+
+	/* Method to read property values for project.properties */
+	public static String getPropertyValue(String propertyName){
+		
+		
+		Properties prop = new Properties();
+		
+		if(System.getenv(propertyName)!= null)
+			
+		
+		return System.getenv(propertyName)
+		else
+		{try{
+			
+		}
+		
+	}
+}

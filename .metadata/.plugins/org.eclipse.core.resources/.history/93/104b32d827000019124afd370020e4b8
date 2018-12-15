@@ -1,0 +1,26 @@
+package com.emirates.ek.utils;
+
+import java.net.MalformedURLException;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class WebdriverUtil {
+
+	public WebDriver driver;
+
+	public WebDriver getWebdriver() throws MalformedURLException {
+
+		driver = new FirefoxDriver();
+
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
+		return driver;
+
+	}
+
+	public void launch() {
+		driver.get("");
+	}
+}

@@ -1,0 +1,18 @@
+package com.emirates.ek.global.stepdefs.home;
+
+import org.testng.asserts.SoftAssert;
+
+import cucumber.api.java.en.Then;
+
+public class GlobalStepDefsHomeUI {
+
+	// public static final Logger LOGGER =
+	// LogManager.getLogger(GlobalStepDefsHomeUI.class);
+	private SoftAssert softAssert = new SoftAssert();
+
+	@Then("^that Bill has decided to check available flights$")
+	public void that_Bill_has_decided_to_check_available_flights() throws Throwable {
+
+	}
+
+}

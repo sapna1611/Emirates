@@ -1,0 +1,10 @@
+package com.emirates.ek.pages;
+
+
+public class HomePage 
+{
+	public static final String DESCRIPTION = "description";
+	@FindBy(id = DESCRIPTION)
+	private WebElement description;
+
+}

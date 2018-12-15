@@ -1,0 +1,67 @@
+package com.emirates.ek.pages;
+
+import java.util.concurrent.TimeUnit;
+import java.util.logging.LogManager;
+import java.util.logging.Logger;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import com.emirates.ek.data.Global;
+
+public abstract class BasePage implements Global {
+	//public static final Logger LOGGER = LogManager.getLogger(BasePage.class);
+	public WebDriver driver;
+
+	public abstract boolean validatePage();
+
+	public abstract String getPageTitle();
+
+	public BasePage(WebDriver driver) {
+
+		this.driver = driver;
+	}
+
+	public void refreshPage() {
+
+		this.driver.navigate().refresh();
+
+	}
+
+	public void setImplicitWait(int timeoutInSeconds) {
+		this.driver.manage().timeouts().implicitlyWait(timeoutInSeconds, TimeUnit.SECONDS);
+	}
+
+	public void waitForWebElementToBeClickable(WebElement webElement, int timeoutInSeconds) {
+
+		try {
+			setImplicitWait(0);
+
+			new WebDriverWait(driver, timeoutInSeconds).until(ExpectedConditions.elementToBeClickable(webElement));
+
+			setImplicitWait(Global.GLOBAL_IMPLICIT_WAIT_IN_SECS);
+
+		} catch (Exception e) {
+
+			// LOGGER.error("Unknow exception occured in
+			// 'waitForWebElementToBeClickable'");
+			e.printStackTrace();
+		}
+
+	}
+
+	public void waitForWebElementToBeClickable(WebElement webElement) {
+
+		waitForWebElementToBeClickable(webElement, 30);
+	}
+
+	public void setPageLoadTimeout(int timeoutInSeconds) {
+
+		// LOGGER.debug("[CDP-TEST] Setting Page Load Timeout to : " +
+		// timeoutInSeconds);
+		this.driver.manage().timeouts().pageLoadTimeout(timeoutInSeconds, TimeUnit.SECONDS);
+	}
+
+}

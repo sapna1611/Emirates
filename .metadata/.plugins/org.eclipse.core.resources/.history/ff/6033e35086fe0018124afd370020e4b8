@@ -1,0 +1,13 @@
+package com.emirates.ek.global.stepdefs.home;
+
+import java.util.logging.LogManager;
+
+import org.testng.asserts.SoftAssert;
+
+public class GlobalStepDefsHomeUI {
+
+	// public static final Logger LOGGER =
+	// LogManager.getLogger(GlobalStepDefsHomeUI.class);
+	private SoftAssert softAssert = new SoftAssert();
+
+}

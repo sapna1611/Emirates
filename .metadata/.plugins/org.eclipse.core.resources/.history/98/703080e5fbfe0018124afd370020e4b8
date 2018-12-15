@@ -1,0 +1,5 @@
+package com.emirates.ek.pages;
+
+public class BasePage {
+
+}
