@@ -8,13 +8,13 @@ Feature: Title of your feature
     When he looks at a return trip from "DXB" to "LHR" leaving one week from now
     Then he should be shown the cheapest return ticket from DXB to LHR
 
-  @tag2
-  Scenario Outline: Bill wants to travel from DXB to LHR
-    Given that Bill has decided to check available flights
-    When he looks at a return trip from "<departure>" to "<arrival>" leaving one week from now
-    Then he should be shown the cheapest return ticket from DXB to LHR
-
-    Examples: 
-      | departure | arrival |
-      | DXB       | LHR     |
-      | DUB       | BLR     |
+  #@tag2
+  #Scenario Outline: Bill wants to travel from DXB to LHR
+    #Given that Bill has decided to check available flights
+    #When he looks at a return trip from "<departure>" to "<arrival>" leaving one week from now
+    #Then he should be shown the cheapest return ticket from DXB to LHR
+#
+    #Examples: 
+      #| departure | arrival |
+      #| DXB       | LHR     |
+      #| DUB       | BLR     |

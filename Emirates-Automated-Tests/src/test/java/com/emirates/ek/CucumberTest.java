@@ -9,9 +9,29 @@
 
 package com.emirates.ek;
 
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeSuite;
+
 import cucumber.api.CucumberOptions;
 
 @CucumberOptions(plugin = { "html:target/site/cucumber-reports",
 		"json:target/cucumber.json" }, glue = "com.emirates.ek.global", features = "src/test/resources/features/")
 public class CucumberTest {
+
+	public static final Logger LOGGER = LogManager.getLogger(CucumberTest.class);
+
+	@BeforeSuite
+	public void setUp() {
+
+		LOGGER.debug("************************** Before Suite - Begin *********************************");
+		LOGGER.debug("************************** Before Suite - End ***********************************");
+	}
+
+	@AfterSuite
+	public void teardown() {
+		LOGGER.debug("************************** After Suite - Begin **********************************");
+		LOGGER.debug("************************** After Suite - End ************************************");
+	}
 }
