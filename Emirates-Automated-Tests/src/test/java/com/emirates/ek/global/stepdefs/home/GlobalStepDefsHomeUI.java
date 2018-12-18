@@ -1,14 +1,17 @@
 package com.emirates.ek.global.stepdefs.home;
 
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+
 import com.emirates.ek.pages.HomePage;
 import com.emirates.ek.utils.WebdriverUtil;
+
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 public class GlobalStepDefsHomeUI {
 
-	// public static final Logger LOGGER =
-	// LogManager.getLogger(GlobalStepDefsHomeUI.class);
+	public static final Logger LOGGER = LogManager.getLogger(GlobalStepDefsHomeUI.class);
 
 	@Then("^that Bill has decided to check available flights$")
 	public void that_Bill_has_decided_to_check_available_flights() throws Throwable {
